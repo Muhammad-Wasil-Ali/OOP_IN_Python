@@ -1,17 +1,36 @@
+from typing import List
 class Student:
-    def __init__(self,name,marks):
-        self.name=name
-        self.marks=marks
-        
+    def __init__(self,name:str="abc",age:int=0,grades:List=None):
+        self.name=name,
+        self.age=age
+        self.grades=grades
     
-    def averageMarks(self)->float:
+    def addGrade(self,grade:int):
+        if self.grades is None:
+            return
+        self.grades.append(grade)
+    def calculateAverage(self):
+        if self.grades is None:
+            return "There is not grades of this student"
         sum=0
-        for i in self.marks:
-            sum+=i
-        return sum/len(self.marks)
+        for grade in self.grades:
+            sum+=grade
+        return sum/len(self.grades)
     
-    
+    def checkStatus(self):
+        
+        if self.grades is None:
+            
+           return
+        if self.calculateAverage()>=60:
+            print("You are pass")
+        else:
+            print("You are not qualified")        
+        
+std1=Student("wasil",23)
 
-std1=Student("wasil",[98,99,94,92])
+std1.addGrade(0)
+std1.addGrade(0)
 
-print(std1.averageMarks())
+
+std1.checkStatus()
