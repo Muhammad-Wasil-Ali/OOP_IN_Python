@@ -1,3 +1,4 @@
+import pdb
 class Book:
     def __init__(self, title, author, isbn, isAvailable=True):
         self.title = title
@@ -95,7 +96,8 @@ class Library:
 book1 = Book("Devops", "wasil", "12345", True)
 book2 = Book("PDA", "wasil", "54321", False)
 book3 = Book("HC", "wasil", "34512", True)
-
+print(book3)
+pdb.set_trace()
 library = Library()
 
 library.addBook(book1)
