@@ -5,7 +5,7 @@ class User:
         
 class Male(User):
     def userInfo():
-        print("He is male")
+        print("His gender is male")
         
         
 c=[User,Male]
