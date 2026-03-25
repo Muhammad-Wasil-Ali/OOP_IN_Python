@@ -10,5 +10,5 @@ class Male(User):
         
 c=[User,Male]
 
-for info in c:
-    info.userInfo()
+for f in c:
+    f.userInfo()
