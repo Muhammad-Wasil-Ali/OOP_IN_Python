@@ -8,7 +8,7 @@ async def task1():
 async def task2():
     print("Fun 2 started")
     await asyncio.sleep(2)
-    print("Task 2 done")
+    print("Task 2 done dona done done done....")
 
 async def main():
     await asyncio.gather(task1(), task2())
