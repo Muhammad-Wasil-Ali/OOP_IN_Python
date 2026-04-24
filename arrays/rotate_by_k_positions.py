@@ -38,7 +38,43 @@ def bruteForceLeftRotation(arr:List,k:int)->List:
     return arr
 
 
+# using Big O9(n)
+
+
+
+def rightRotate(arr: List[int], k: int) -> List[int]:
+    n = len(arr)
+    k = k % n
+    
+    result = [0]*n 
+    
+    for i in range(n):
+        pos = (i + k) % n
+        result[pos] = arr[i]
+    
+    return result
+
+
+from typing import List
+
+def leftRotate(arr: List[int], k: int) -> List[int]:
+    n = len(arr)
+    k = k % n
+    
+    result = [0] * n
+    
+    for i in range(n):
+        pos = (i - k+n) % n
+        result[pos] = arr[i]
+    
+    return result
+print(rightRotate([1,2,3,4,5],2))
+print(leftRotate([1,2,3,4,5],2))
+
+
+
 print(bruteForceLeftRotation([1,2,3,4,5],2))
 
 
 print(bruteForceRightRotation([1,2,3,4,5],2))
+
