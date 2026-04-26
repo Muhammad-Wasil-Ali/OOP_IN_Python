@@ -1,1 +1,2 @@
-reverse(arr,0,n-1)
+if sec_lar < arr[i] and arr[i]<lar:
+    #     sec_lar=arr[i]
