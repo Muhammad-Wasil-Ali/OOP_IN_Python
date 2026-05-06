@@ -33,11 +33,8 @@ class DoublyLinkedList:
             
             return
         current=self.head
-        while current.next:
-            current=current.next
-        
-        current.next=newNode
-        newNode.prev=current
+        self.tail.next=newNode
+        newNode.prev=self.tail
         self.tail=newNode
         
     # insert at specific position 
@@ -61,19 +58,63 @@ class DoublyLinkedList:
         
         current =self.head
         count=1
-        while count!=position:
+        while  count!=position-1:
             current=current.next
             count+=1
         
        
         newNode.next=current.next
         newNode.prev=current
-        current.next=newNode
         current.next.prev=newNode
+        current.next=newNode
         
               
+    # delete head
+    
+    def deleteHead(self):
         
-          
+        if self.head is None:
+            print("List is empty")
+            return
+        if self.head==self.tail:
+            self.head=None
+            self.tail=None
+        else:
+            self.head=self.head.next
+            self.head.prev=None
+    def deleteTail(self):
+        if self.tail is None:
+            print("List is empty")      
+            return
+        if self.head==self.tail:
+            self.head=None
+            self.tail=None
+        else:
+            self.tail=self.tail.prev
+            self.tail.next=None
+            
+    # delete node on specific position
+    
+    def deleteNodeOnSpecificPosition(self,position):
+        size=self.size()
+        if position < 1 or position > size:
+            print(f"Value should be from 1 to {size}")
+            return 
+        if position==1:
+            self.deleteHead()
+            return
+        if position==size:
+            self.deleteTail()
+            return
+       
+        current=self.head
+        count=1
+        while current and count <position:
+            current=current.next
+            count+=1
+        
+        current.next.prev=current.prev
+        current.prev.next=current.next
     def traverseForward(self)  :
         current=self.head
         
@@ -111,6 +152,15 @@ dd.appendNode(40)
 dd.appendNode(50)
 dd.insertAtHead(100)
 dd.insertAtSepcificPosition(200,3)
+
+dd.appendNode(1000)
+
+dd.deleteHead()
+dd.deleteTail()
+
+dd.deleteNodeOnSpecificPosition(6)
+dd.deleteNodeOnSpecificPosition(2)
+
 dd.traverseForward()
 dd.traverseBackward()
 dd.headAndTail()
