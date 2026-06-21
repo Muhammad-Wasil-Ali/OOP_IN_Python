@@ -6,6 +6,25 @@ def reverseArray(arr:List)->int:
         print(i,end=" ")
         
         
-arr=[1,2,3,4,5,6,7,8,9]
+arr=[1,2,3,4,5]
 
-reverseArray(arr)
+
+def optimizeReverseArray(arr:List)->List:
+    if len(arr)==0:
+        return "Array is empty"
+    
+    start=0
+    end=len(arr)-1
+    
+    while(start<=end):
+        temp=arr[start]
+        arr[start]=arr[end]
+        arr[end]=temp
+        
+        start+=1
+        end-=1
+        
+    return arr
+
+
+print(optimizeReverseArray(arr))

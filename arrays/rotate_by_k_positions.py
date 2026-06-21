@@ -8,15 +8,13 @@ def bruteForceRightRotation(arr:List,k:int)->List:
     
     for _ in range(k):
         last=arr[n-1]
-        
-        for i  in range(n-1,0,-1):
+        for i in range(n-1,0,-1):
             arr[i]=arr[i-1]
-            
+        
         arr[0]=last
         
-    
-    
     return arr
+   
 
 
 
@@ -44,7 +42,7 @@ def bruteForceLeftRotation(arr:List,k:int)->List:
 
 def rightRotate(arr: List[int], k: int) -> List[int]:
     n = len(arr)
-    k = k % n
+    # k = k % n
     
     result = [0]*n 
     
@@ -55,11 +53,11 @@ def rightRotate(arr: List[int], k: int) -> List[int]:
     return result
 
 
-from typing import List
+
 
 def leftRotate(arr: List[int], k: int) -> List[int]:
     n = len(arr)
-    k = k % n
+    # k = k % n
     
     result = [0] * n
     
@@ -68,8 +66,8 @@ def leftRotate(arr: List[int], k: int) -> List[int]:
         result[pos] = arr[i]
     
     return result
-print(rightRotate([1,2,3,4,5],2))
-print(leftRotate([1,2,3,4,5],2))
+# print(rightRotate([1,2,3,4,5],3))
+# print(leftRotate([1,2,3,4,5],3))
 
 
 
