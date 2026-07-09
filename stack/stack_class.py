@@ -6,15 +6,17 @@ class Stack:
         self.stack.append(data)
     
     def pop(self):
+        if self.isEmpty():
+            return "Stack underflow"
         self.stack.pop()
         
     def isEmpty(self):
-        if len(self.stack)==0:
-            return True
-        else :
-            return False
+       return len(self.stack)==0
         
     def peek(self):
+        if self.isEmpty():
+            print("Stack is empty")
+            return
         return self.stack[-1]
     
     
